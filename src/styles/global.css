@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+    --color-accent: #03C03C;
+    --color-on-accent: #fff;
+    --color-secondary: #BF0386;
+    --color-on-secondary: #fff;
+    --font-body: 'Lexend', sans-serif;
+}
+
+:root {
+    --color-accent: #03C03C;
+    --color-secondary: #BF0386;
+    --color-on-secondary: #fff;
+    --font-body: 'Lexend', sans-serif;
+}
+
+html {
+    font-family: 'Lexend', sans-serif;
+    scroll-behavior: smooth;
+}
+
+* {
+    scroll-margin-top: 100px;
+}
+
+article ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+article ul li::marker {
+    color: var(--color-accent);
+}
+article p {
+    margin-bottom: 8px;
+}

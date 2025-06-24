@@ -1,0 +1,42 @@
+---
+import SquareCard from "./elements/SquareCard.astro";
+---
+
+<section class="w-full p-8 bg-white" id="contact">
+  <h2 class="text-center text-4xl font-semibold mb-8">Contact Me</h2>
+  <div
+    class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 flex-wrap max-w-6xl mx-auto"
+  >
+    <SquareCard
+      title="Bangalore, India"
+      icon="fa-solid fa-location-dot"
+      subtitle="Address"
+      square={false}
+      type="text"
+    />
+    <SquareCard
+      title="8103425210"
+      icon="fa-solid fa-phone"
+      subtitle="Contact Number"
+      square={false}
+      type="phno"
+      href="8103425210"
+    />
+    <SquareCard
+      title="anuragpadhiworks@gmail.com"
+      icon="fa-solid fa-envelope"
+      subtitle="Email"
+      square={false}
+      type="email"
+      href="anuragpadhiworks@gmail.com"
+    />
+    <SquareCard
+      title="Anurag's Resume"
+      icon="fa-solid fa-file"
+      subtitle="Resume"
+      square={false}
+      type="link"
+      href="https://drive.google.com/file/d/1QZO7QR2Blzcn-blK5i2t49wbFVNLwEfn/view"
+    />
+  </div>
+</section>

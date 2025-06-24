@@ -1,16 +1,40 @@
 ---
+import Intro from "../components/Intro.astro";
+import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
+import BaseLayout from "../layout/BaseLayout.astro";
 
+const skills = [
+  { skill: "Human Resource Management", level: 8, icon: "fa-solid fa-users" },
+  { skill: "Technical Acumen", level: 9, icon: "fa-solid fa-laptop-code" },
+  { skill: "Leadership", level: 8, icon: "fa-solid fa-chess-king" },
+  { skill: "Decision Science", level: 7, icon: "fa-solid fa-diagram-project" },
+  { skill: "Teaching", level: 9, icon: "fa-solid fa-chalkboard-teacher" },
+  { skill: "Communication", level: 8, icon: "fa-solid fa-comments" },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Intro
+    name="Anurag Padhi"
+    role="Decision Scientist"
+    special="LinkedIn"
+    special_link="https://www.linkedin.com/in/anurag-padhi/"
+    special_icon="fa-brands fa-linkedin-in"
+    special_icon_color="bg-[#0077B5]"
+    img="./images/Frame_1.png"
+  >
+    I am an aspiring Decision Scientist with a strong foundation in analytics
+    and strategic thinking.
+  </Intro>
+
+  <About skills={skills} img="./images/Anu_Speech.png">
+    I am a <b>Decision Science</b> student at Christ University, Bangalore, with
+    experience in analytics, problem-solving, and business strategy. I tutor at
+    <b>Teachers' by Choice</b> and serve as HR at Happy Folks Club. I am passionate
+    about using data for impactful decision-making and seek opportunities in business
+    intelligence and innovation.
+  </About>
+
+  <Experience />
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import Head from "../components/Head.astro";
+import Nav from "../components/Nav.astro";
+const tabColorVar = "#ffbd39";
+const { title, margin_bottom, href2, href3, bg } = Astro.props;
+---
+
+<html>
+  <head>
+    <Head title={title} tabColor={tabColorVar} />
+  </head>
+  <body class={`${bg}`}>
+    <Nav margin_bottom={margin_bottom} link2="About" link3="Experience" href2={href2} href3={href3} actionHref="#contact" />
+    <slot />
+    <Contact />
+    <Footer username="Anurag Padhi" />
+  </body>
+</html>

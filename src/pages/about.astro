@@ -1,0 +1,66 @@
+---
+import Head from "../components/Head.astro";
+import Nav from "../components/Nav.astro";
+import BaseLayout from "../layout/BaseLayout.astro";
+---
+
+<BaseLayout bg="bg-black" title="About Me">
+  <div class="w-full bg-black flex">
+    <h1
+      class="h-48 text-4xl sm:text-5xl mx-8 w-[630px] font-black decoration-6 underline underline-offset-4 md:mx-auto text-white decoration-secondary items-center flex"
+    >
+      About Anurag Padhi
+    </h1>
+  </div>
+  <div class="w-full">
+    <article class="text-white max-w-prose mx-auto grid grid-cols-2 py-4">
+      <ul class="flex flex-col gap-3">
+        <li class="list-none">Profile:</li>
+        <li class="list-none" class="list-none">Domain:</li>
+        <li class="list-none" class="list-none">Education:</li>
+        <li class="list-none" class="list-none">Language:</li>
+        <li class="list-none" class="list-none">Other Skills:</li>
+        <li class="list-none" class="list-none">Interest:</li>
+      </ul>
+      <ul class="flex flex-col gap-3 text-right">
+        <li class="list-none">Decision Science & Business Analytics</li>
+        <li class="list-none" class="list-none">
+          Business Analytics & Predictive Analysis
+        </li>
+        <li class="list-none" class="list-none">BBA Decision Science</li>
+        <li class="list-none" class="list-none">
+          English, Hindi, Odia, Spanish, Sanskrit
+        </li>
+        <li class="list-none" class="list-none">
+          Analytical Tools, Teaching, Human Resource Management, Communication &
+          Leadership
+        </li>
+        <li class="list-none" class="list-none">
+          Singing, Teaching, Travelling
+        </li>
+      </ul>
+    </article>
+  </div>
+  <article class="w-full bg-gray-300 px-8">
+    <div class="mx-auto max-w-prose py-4">
+      <p>
+        Anurag Padhi is an aspiring Decision Scientist with a strong foundation
+        in analytics and strategic thinking. He is currently pursuing a BBA in
+        Decision Science (Industry Integrated with Mu Sigma) at Christ
+        University, Bangalore.
+      </p>
+      <p>
+        As a participant in IIM Ranchi’s YCP 2.0, he has honed problem-solving
+        skills and business acumen.
+      </p><p>
+        Beyond academics, Anurag is passionate about education, serving as a
+        tutor at Teachers' by Choice, and fostering community engagement as an
+        HR at Happy Folks Club.
+      </p><p>
+        With a keen interest in leveraging data-driven insights for impactful
+        decision-making, he is eager to explore opportunities that bridge
+        business intelligence and innovation.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

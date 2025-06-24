@@ -1,0 +1,33 @@
+---
+const { action = "Contact", actionHref } = Astro.props;
+const { hide_action = false, margin_bottom = "mb-6" } = Astro.props;
+const { link2, href2 = "#about", link3, href3 = "#experience" } = Astro.props;
+---
+
+<nav
+  class={`flex p-3 ${margin_bottom} min-h-[72px] z-10 sm:mx-4 md:mx-8 max-w-6xl xl:mx-auto sm:mt-4 bg-gray-950 text-white sm:border-4 border-b-4 border-b-accent sm:border-accent sm:rounded-full sticky top-0 sm:top-4`}
+>
+  <div class="items-center justify-between flex w-full">
+    <span class="logo">
+      <a href="/" class="text-lg font-bold uppercase px-3 rounded-3xl"
+        >Anurag Padhi</a
+      >
+    </span>
+    <ul
+      class={`sm:flex-row gap-4 float-end items-center hidden flex-col sm:flex ${hide_action ? "pr-5" : ""}`}
+    >
+      <li><a href="/">Home</a></li>
+      <li><a href={href2}>{link2}</a></li>
+      <li><a href={href3}>{link3}</a></li>
+      <li class={`cursor-pointer ${hide_action ? "hidden" : ""}`}>
+        <a href={actionHref} class="bg-secondary text-on-secondary px-3 py-2.5 rounded-3xl focus:outline-2 focus:outline-offset-2 focus:outline-white"
+          >{action}</a
+        >
+      </li>
+    </ul>
+    <button class="sm:hidden text-2xl px-3 hover:cursor-pointer">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+<!-- <div class="h-16 sm:h-[72px]"></div> -->

@@ -1,0 +1,41 @@
+---
+// filepath: src/components/SkillMastery.astro
+const {
+  skill,
+  level,
+  icon = "fa-solid fa-star",
+  hideIcon = false,
+} = Astro.props;
+const dots = Array.from({ length: 10 });
+---
+
+<div
+  style="display: flex; align-items: center; margin: 8px 0; color: #fff; justify-content: space-between; width: 100%;"
+>
+  <div class="flex">
+    <span class={hideIcon ? "hidden" : ""}>
+      <i
+        class={`${icon} self-center`}
+        style="margin-right: 12px; font-size: 1.2em; min-width: 20px;"
+      ></i></span
+    >
+    <span style="min-width: 100px;">{skill}</span>
+  </div>
+  <div style="margin-left: 16px; display: flex; align-items: center;">
+    {
+      dots.map((_, i) => (
+        <span
+          style={`
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin: 0 2px;
+          border-radius: 50%;
+          background: ${i < level ? "var(--color-accent)" : "#424242"};
+        `}
+          aria-hidden="true"
+        />
+      ))
+    }
+  </div>
+</div>

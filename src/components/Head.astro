@@ -1,0 +1,28 @@
+---
+const { title, tabColor = "#000000" } = Astro.props;
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://assets.broveer.xyz/css/fontawesome.css" />
+<link rel="stylesheet" href="https://assets.broveer.xyz/css/brands.css" />
+<link rel="stylesheet" href="https://assets.broveer.xyz/css/solid.css" />
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="stylesheet" href="../../src/styles/global.css" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<meta
+  name="description"
+  content="Anurag Padhi's personal portfolio website showcasing skills, projects, and experience."
+/>
+<meta property="og:image" content="./images/Anu_BG.jpg" />
+
+<meta name="theme-color" content={tabColor} />
+
+<title>{title}</title>

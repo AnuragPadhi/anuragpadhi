@@ -1,0 +1,82 @@
+---
+import Skill from "./elements/Skill.astro";
+const { skills = [], img } = Astro.props;
+---
+
+<section
+  class="flex flex-col px-6 py-12 sm:px-8 bg-black text-white"
+  id="about"
+>
+  <div class="mb-8 max-w-3xl mx-auto flex flex-col sm:flex-row items-center">
+    <img
+      src={img}
+      alt=""
+      class="h-64 w-64 rounded-full border-8 border-accent"
+    />
+    <div class="pl-0 sm:pl-12">
+      <h2
+        class="text-4xl uppercase font-extrabold underline underline-offset-6 mb-3 decoration-secondary mt-8 sm:mt-0"
+      >
+        About Me
+      </h2>
+      <p class="text-gray-400 text-justify sm:text-left">
+        <slot />
+      </p>
+    </div>
+  </div>
+  <h2
+    class="text-4xl uppercase font-extrabold mt-4 underline underline-offset-6 mb-3 decoration-secondary max-w-3xl mx-auto w-full"
+  >
+    Skills
+  </h2>
+  <div
+    class="flex flex-col lg:flex-row justify-around max-w-3xl w-full mx-auto"
+  >
+    <ul class="skillset column-1">
+      {
+        skills
+          .slice(0, Math.ceil(skills.length / 2))
+          .map((skill: { skill: string; level: string; icon: string; hideIcon: boolean }) => (
+            <li class="py-2">
+              <Skill
+                skill={skill.skill}
+                level={skill.level}
+                icon={skill.icon}
+                hideIcon={skill.hideIcon}
+              />
+            </li>
+          ))
+      }
+    </ul>
+    <ul class="skillset column-2">
+      {
+        skills
+          .slice(Math.ceil(skills.length / 2))
+          .map((skill: { skill: string; level: string; icon: string; hideIcon: boolean }) => (
+            <li class="pl-0 lg:pl-4 py-2">
+              <Skill
+                skill={skill.skill}
+                level={skill.level}
+                icon={skill.icon}
+                hideIcon={skill.hideIcon}
+              />
+            </li>
+          ))
+      }
+    </ul>
+  </div>
+  <span class="text-center text-slate-400 text-xl mt-8 transition-all duration-300"
+    ><a href="/about" class="group">Read More <i class="fa-solid fa-arrow-right group-hover:translate-x-1 group-active:translate-0 transition-all"></i></a
+    ></span
+  >
+</section>
+<style>
+  .skillset li:not(:last-child) {
+    border-bottom: 2px solid var(--color-secondary);
+  }
+  @media screen and (max-width: 1024px) {
+    .skillset:nth-of-type(2) li:first-child {
+      border-top: 2px solid var(--color-secondary);
+    }
+  }
+</style>

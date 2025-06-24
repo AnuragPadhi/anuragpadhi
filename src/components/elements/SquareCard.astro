@@ -1,0 +1,48 @@
+---
+const { title, icon, subtitle, square = true, type, href } = Astro.props;
+
+// Detect if it's an email to apply wrapping logic
+const isEmail = title.includes("@");
+const emailParts = isEmail ? title.split("@") : [];
+
+// Safely generate final href based on type
+let finalHref = href;
+
+if (type === "email") {
+  finalHref = `mailto:${href}`;
+} else if (type === "phno") {
+  finalHref = `tel:${href}`;
+} else if (type === "link") {
+  finalHref = href.startsWith("http") ? href : `https://${href}`;
+}
+---
+
+<div class={`group select-none ${square ? "aspect-square" : "aspect-video"}`}>
+  <a
+    href={finalHref}
+    target={type === "link" ? "_blank" : "_self"}
+    rel={type === "link" ? "noopener noreferrer" : ""}
+    class="h-full w-full rounded-2xl flex flex-col hover:bg-gray-200 justify-between p-8 sm:p-4 border-2 border-slate-200 hover:border-accent bg-slate-100 duration-200"
+  >
+    <div class="flex flex-row justify-between gap-4">
+      <span class="break-words w-4/5 text-xl">
+        {
+          isEmail ? (
+            <>
+              {emailParts[0]}
+              <wbr />@{emailParts[1]}
+            </>
+          ) : (
+            title
+          )
+        }
+      </span>
+      <span class="text-md text-gray-400 text-right relative">
+        <i
+          class={`${icon} text-5xl sm:text-3xl lg:text-2xl group-hover:text-accent duration-200`}
+        ></i>
+      </span>
+    </div>
+    <h3 class="text-slate-500 text-xl sm:text-lg">{subtitle}</h3>
+  </a>
+</div>

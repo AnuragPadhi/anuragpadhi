@@ -1,0 +1,32 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout
+  title={frontmatter.title}
+  margin_bottom="mb-0"
+  href2="/#about"
+  href3="/#experience"
+>
+  <div class="flex flex-col md:flex-row mt-0 md:mt-6 pb-4 max-w-6xl mx-auto">
+    <div
+      class="w-full md:w-1/2 bg-accent p-6 md:p-12 flex flex-col md:rounded-4xl"
+    >
+      <img
+        src={frontmatter.image ??
+          "https://placehold.co/720x480/FF4F00/white?font=raleway&text=Logo\\nImage"}
+        alt={frontmatter.imgalt}
+        class="aspect-square object-cover max-h-36 max-w-36 rounded-full mb-4"
+      />
+      <span class="text-on-accent text-xl">{frontmatter.period}</span>
+      <h2 class="text-on-accent font-bold text-4xl w-fit py-2">
+        {frontmatter.title}
+      </h2>
+      <h3 class="text-on-accent text-2xl">{frontmatter.company}</h3>
+    </div>
+    <article class="w-full md:w-1/2 px-6 pt-6">
+      <slot />
+    </article>
+  </div>
+</BaseLayout>

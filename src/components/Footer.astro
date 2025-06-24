@@ -1,0 +1,81 @@
+---
+const { username } = Astro.props;
+---
+
+<footer
+  class="bg-black text-white p-4 sm:p-8 flex flex-col items-center justify-center"
+>
+  <div>
+    <span id="today" class="text-6xl"
+      ><em class="not-italic" id="message"></em><em
+        class="not-italic bg-linear-to-r from-accent to-white"
+        id="dayname"
+        style="-webkit-text-fill-color: transparent; background-clip: text;"
+      ></em></span
+    >
+  </div>
+  <script>
+    const dayIndex = new Date().getDay();
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const currentDay = days[dayIndex];
+
+    const isWeekend = dayIndex === 0 || dayIndex === 6;
+
+    const messageText = isWeekend ? "Enjoy your " : "Have a productive ";
+
+    // Set the message and day name separately
+    document.getElementById("message").textContent = messageText;
+    document.getElementById("dayname").textContent = currentDay + "!";
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const footerAttribution = document.querySelector(
+        ".missing-features-logo"
+      );
+      if (!footerAttribution) {
+        console.warn(
+          `%cRequired footer credit "Made with ❤️ by Broveer" is missing.\nPlease retain or upgrade to the Extended License.`,
+          "color: red; font-family: sans-serif;font-weight: 900;",
+          `This website template was built by Broveer: https://www.broveer.xyz`,
+          "color: blue;font-weight:900;"
+        );
+      }
+    });
+  </script>
+  <div
+    class="text-[170px] mt-8 font-bold uppercase leading-[0.8] tracking-tighter text-center"
+  >
+    <span class="block text-[22vw]"
+      ><span>Anurag</span><span class="block text-accent text-[29.3vw]">
+        Padhi</span
+      ></span
+    >
+  </div>
+  <hr style="border: 1px solid #aaa; width: 100%;" class="my-4" />
+  <link rel="stylesheet" href="../src/styles/logo.css" />
+  <div
+    class="flex flex-col sm:flex-row items-center justify-between w-full text-center gap-2"
+  >
+    <span>© {new Date().getFullYear()} {username}. All rights reserved.</span>
+    <span>
+      <i class="fa-solid fa-code"></i> with
+      <i class="fa-solid fa-heart text-red-500"></i> by
+      <span class="missing-features-logo">
+        <a
+          href="https://www.broveer.xyz/about"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Broveer
+        </a>
+      </span>
+    </span>
+  </div>
+</footer>

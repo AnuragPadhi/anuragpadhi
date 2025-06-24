@@ -1,0 +1,81 @@
+---
+import MiniCard from "./elements/MiniCard.astro";
+---
+
+<section
+  class="flex flex-col items-center justify-center px-8 md:px-12 py-12 bg-slate-100"
+  id="experience"
+>
+  <span class="text-center text-xl font-light">Education & Experience</span>
+  <h2 class="text-center text-4xl font-semibold">
+    My <i class="text-primary font-normal text-accent"
+      >Academic and <br /> Professional</i
+    > Journey
+  </h2>
+  <div class="flex flex-col md:flex-row w-full gap-8 mt-8 max-w-6xl">
+    <div
+      class="flex flex-col justify-left bg-slate-200 border-1 border-accent rounded-xl w-full p-6"
+    >
+      <h3 class="flex text-3xl items-center border-b-4 border-accent mb-4">
+        <i
+          class="fa-solid fa-briefcase self-end p-4 rounded-tr-xl rounded-tl-xl bg-accent mr-4"
+        ></i>Work Experience
+      </h3>
+      <div>
+        <MiniCard
+          years="Jan '25 - July '25"
+          title="Happy Folks Club"
+          description="Human Resource Manager"
+          href="/happy-folks-club"
+        />
+        <MiniCard
+          years="Jan' 25 - Present"
+          title="Teachers by Choice"
+          description="Quantitative Aptitude Tutor"
+          href="/teachers-by-choice"
+          image="https://media.licdn.com/dms/image/v2/D560BAQFE1j7HYG3ONw/company-logo_200_200/company-logo_200_200/0/1738825768983/teachers_by_choice_bengaluru_logo?e=1756339200&v=beta&t=A09-1Yr7ACyhkKqpNkC9bIHsggmL4YZ9z18L7PU0GXw"
+        />
+        <MiniCard
+          years="Jan '25 - Present"
+          title="Melange - The HR Club"
+          description="Planning & Strategy"
+          href="/melange"
+        />
+        <MiniCard
+          years="December' 24"
+          title="Young Changemakers Programme"
+          description="Indian Institute of Management, Ranchi"
+          href="/iim-ranchi"
+        />
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col justify-left bg-slate-200 border-1 border-accent rounded-xl w-full p-6"
+    >
+      <h3 class="flex text-3xl items-center border-b-4 border-accent mb-4">
+        <i
+          class="fa-solid fa-graduation-cap p-4 rounded-tr-xl rounded-tl-xl bg-accent mr-4"
+        ></i>Education
+      </h3>
+      <div>
+        <MiniCard
+          years="2024-2027"
+          title="Christ University, Bangalore"
+          description="BBA Decision Science"
+          href="christ-university"
+        />
+        <MiniCard
+          years="2021-2023"
+          title="MBS Public School"
+          description="Higher Secondary School"
+        />
+        <MiniCard
+          years="2017-2021"
+          title="DAV Public School"
+          description="Senior Secondary School"
+        />
+      </div>
+    </div>
+  </div>
+</section>
