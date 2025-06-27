@@ -14,4 +14,5 @@ export default defineConfig({
     },
   },
   site: 'https://anuragpadhi.github.io',
+  base: '/github-pages',
 });
