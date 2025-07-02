@@ -11,5 +11,4 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: 'https://anuragpadhi.github.io',
-  base: '/github-pages',
 });
