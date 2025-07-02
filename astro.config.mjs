@@ -9,9 +9,6 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      allowedHosts: ["raccoon-healthy-falcon.ngrok-free.app"],
-    },
   },
   site: 'https://anuragpadhi.github.io',
   base: '/github-pages',
