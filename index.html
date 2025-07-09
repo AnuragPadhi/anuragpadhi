@@ -122,7 +122,14 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" style="text-align: justify;">
 
 
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target scrolled sleep awake"
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar site-navbar-target scrolled sleep awake"
+	class="position: static;
+	overflow: hidden;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 3;
+	background: black;"
 		id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">Anurag Padhi</a>
@@ -150,14 +157,16 @@
 					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
 						data-scrollax-parent="true">
 						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/Anu\ BG.jpg);">
+							>
 							<div class="overlay"></div>
+							<img src="./images/Anu BG.jpg" alt="">
 						</div>
 						<div class="one-forth d-flex  align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
+							data-scrollax=" properties: { translateY: '70%' }"
+							style="flex-direction: column-reverse">
 							<div class="text">
 								<span class="subheading">Hello!</span>
-								<h1 class="mb-4 mt-3">I'm <span>Anurag Padhi</span></h1>
+								<h1 class="mb-4 mt-3">I'm <span>Anurag<br>Padhi</span></h1>
 
 								<!-- Element to contain animated typing -->
 								<span id="typing-animation"></span>
